@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Hovhannes Sardaryan">
+    <meta name="description" content="This is the first work of my career.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/calculator.png">
+    <title>Calculator</title>
+</head>
+<body>
+    <main>
+       <h1>By Hovhannes Sardaryan</h1>
+        <section id="press">
+            <div id="display">
+                <p id="row2"></p>
+                <p id="operatorRow"></p>
+                <p id="resultRow">0</p>
+            </div>
+            <button id="delete" onclick="deleteDisplay()">Dell</button>
+            <button onclick="cleaner()"><<</button>
+            <button onclick="addOperator('%')">%</button>
+            <button onclick="addOperator('/')">/</button>
+            <button onclick="addnumber(7)">7</button>
+            <button onclick="addnumber(8)">8</button>
+            <button onclick="addnumber(9)">9</button>
+            <button onclick="addOperator('*')">*</button>
+            <button onclick="addnumber(4)">4</button>
+            <button onclick="addnumber(5)">5</button>
+            <button onclick="addnumber(6)">6</button>
+            <button onclick="addOperator('-')">-</button>
+            <button onclick="addnumber(1)">1</button>
+            <button onclick="addnumber(2)">2</button>
+            <button onclick="addnumber(3)">3</button>
+            <button onclick="addOperator('+')">+</button>
+            <button onclick="addnumber(0)">0</button>
+            <button onclick="addnumber('.')">.</button>
+            <button id="enter" onclick="enter()">=</button>
+        </section>
+        <script src="js/calc.js"></script>
+    </main>
+</body>
+</html>
