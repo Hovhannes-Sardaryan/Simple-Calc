@@ -1,18 +1,23 @@
+const row2 = document.getElementById("row2");
+const opr = document.getElementById("operatorRow");
+const result = document.getElementById("resultRow");
+
+
 document.onkeydown = function(key){
     let g = key.keyCode;
-    if(g>95 && g<106 || g==110 || g>47 && g<58 && key.key!="%"){ addnumber(key.key)}
+    if(g>95 && g<106 || g==110 || g==190 || g>47 && g<58 && key.key!="%"){ addnumber(key.key)}
     if(g==106 || g==107 || g==109 || g==111 || key.key==="%"){ addOperator(key.key)}; 
     if(g==13){enter()}
     if(g==46){deleteDisplay()}
     if(g==8){cleaner()} 
 }
-const row2 = document.getElementById("row2");
-const opr = document.getElementById("operatorRow");
-const result = document.getElementById("resultRow");
 
 function addnumber(a) {
     let text = result.textContent;
+    let reg = /\./g;
+
     if(text == "0"){text = ""};
+    if(text.match(reg) && a==="."){a=""}
     text += a;
     result.innerHTML = text;
     sizes()
@@ -24,6 +29,8 @@ function addOperator(oprName) {
     }else{
         row2.innerHTML = result.textContent;    result.innerHTML = "";  
     };
+    row2.style.fontSize = "24px"
+
 }
 function enter() {   
     let a = row2.textContent;
@@ -56,7 +63,6 @@ function deleteDisplay() {
 }
 function sizes(){
     if(result.textContent.length>20){
-        document.getElementById("display").style.overflow = 'auto';
         opr.style.fontSize = "18px";
     }
 }
